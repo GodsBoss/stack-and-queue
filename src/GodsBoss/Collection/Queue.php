@@ -26,7 +26,7 @@ class Queue
 
 	public function isEmpty()
 	{
-		return true;
+		return $this->size === 0;
 	}
 
 	public function push($value)
