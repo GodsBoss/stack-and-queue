@@ -36,4 +36,14 @@ class StackTest extends PHPUnit_Framework_TestCase
 		$stack->push($item);
 		$this->assertEquals($item, $stack->pop());
 	}
+
+	public function testShrinksWhenPoppingItems()
+	{
+		$stack = new Stack();
+		$stack->push(1);
+		$stack->push(2);
+		$stack->push(3);
+		$stack->pop();
+		$this->assertEquals(2, $stack->size());
+	}
 }

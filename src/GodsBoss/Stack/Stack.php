@@ -20,6 +20,7 @@ class Stack
 
 	public function pop()
 	{
+		$this->size--;
 		return $this->item;
 	}
 }
