@@ -16,13 +16,6 @@ class StackTest extends AbstractCollectionTest
 		$this->assertEquals($item, $this->collection->pop());
 	}
 
-	public function testShrinksWhenPoppingItems()
-	{
-		$this->push(1, 2, 3);
-		$this->collection->pop();
-		$this->assertEquals(2, $this->collection->size());
-	}
-
 	public function testPopsItemsInReverseOrder()
 	{
 		$first = 'foobar';

@@ -18,6 +18,10 @@ class Queue
 
 	public function pop()
 	{
-		throw new EmptyException();
+		if ($this->size === 0) {
+			throw new EmptyException();
+		} else {
+			$this->size--;
+		}
 	}
 }

@@ -46,4 +46,11 @@ abstract class AbstractCollectionTest extends PHPUnit_Framework_TestCase
 		$this->push('foo', 'bar', 'baz');
 		$this->assertEquals(3, $this->collection->size());
 	}
+
+	public function testShrinksWhenPoppingItems()
+	{
+		$this->push(1, 2, 3);
+		$this->collection->pop();
+		$this->assertEquals(2, $this->collection->size());
+	}
 }
