@@ -17,15 +17,15 @@ class StackTest extends PHPUnit_Framework_TestCase
 	{
 		$item = 5;
 		$stack = new Stack();
-		$stack->add($item);
+		$stack->push($item);
 	}
 
 	public function testHasASizeAccordingToCountOfAddedItems()
 	{
 		$stack = new Stack();
-		$stack->add('foo');
-		$stack->add('bar');
-		$stack->add('baz');
+		$stack->push('foo');
+		$stack->push('bar');
+		$stack->push('baz');
 		$this->assertEquals(3, $stack->size());
 	}
 
@@ -33,7 +33,7 @@ class StackTest extends PHPUnit_Framework_TestCase
 	{
 		$item = 'Hello, world!';
 		$stack = new Stack();
-		$stack->add($item);
+		$stack->push($item);
 		$this->assertEquals($item, $stack->pop());
 	}
 }

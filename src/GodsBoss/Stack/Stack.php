@@ -12,7 +12,7 @@ class Stack
 		return $this->size;
 	}
 
-	public function add($value)
+	public function push($value)
 	{
 		$this->size++;
 		$this->item = $value;
