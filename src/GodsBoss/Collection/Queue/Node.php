@@ -25,5 +25,19 @@ interface Node
 	*/
 	public function setNextNode(Node $node);
 
+	/**
+	* Decide for a new first node on pushing a node.
+	*
+	* @param \GodsBoss\Collection\Queue\Node
+	* @return \GodsBoss\Collection\Queue\Node
+	*/
 	public function getFirstOnPush(Node $candidate);
+
+	/**
+	* Decide for a new second to last node on popping a node.
+	*
+	* @param \GodsBoss\Collection\Queue\Node
+	* @return \GodsBoss\Collection\Queue\Node
+	*/
+	public function getSecondToLastOnPop(Node $candidate);
 }

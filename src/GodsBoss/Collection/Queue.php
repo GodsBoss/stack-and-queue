@@ -37,9 +37,7 @@ class Queue
 	{
 		$value = $this->first->getValue();
 		$this->first = $this->first->getNextNode();
-		if ($this->first == $this->end) {
-			$this->secondToLast = $this->end;
-		}
+		$this->secondToLast = $this->first->getSecondToLastOnPop($this->secondToLast);
 		$this->size--;
 		return $value;
 	}

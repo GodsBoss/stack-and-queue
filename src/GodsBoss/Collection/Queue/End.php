@@ -24,4 +24,9 @@ class End implements Node
 	{
 		return $candidate;
 	}
+
+	public function getSecondToLastOnPop(Node $candidate)
+	{
+		return $this;
+	}
 }

@@ -32,4 +32,9 @@ class Item implements Node
 	{
 		return $this;
 	}
+
+	public function getSecondToLastOnPop(Node $candidate)
+	{
+		return $candidate;
+	}
 }
