@@ -15,6 +15,14 @@ abstract class AbstractCollectionTest extends PHPUnit_Framework_TestCase
 
 	abstract protected function createEmptyCollection();
 
+	protected function push()
+	{
+		$values = func_get_args();
+		foreach ($values as $value) {
+			$this->collection->push($value);
+		}
+	}
+
 	public function testHasAnInitialSizeOfZero()
 	{
 		$this->assertInternalType('integer', $this->collection->size());

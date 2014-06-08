@@ -12,29 +12,25 @@ class StackTest extends AbstractCollectionTest
 	public function testAcceptsItems()
 	{
 		$item = 5;
-		$this->collection->push($item);
+		$this->push($item);
 	}
 
 	public function testHasASizeAccordingToCountOfAddedItems()
 	{
-		$this->collection->push('foo');
-		$this->collection->push('bar');
-		$this->collection->push('baz');
+		$this->push('foo', 'bar', 'baz');
 		$this->assertEquals(3, $this->collection->size());
 	}
 
 	public function testGivesLastAddedItemBack()
 	{
 		$item = 'Hello, world!';
-		$this->collection->push($item);
+		$this->push($item);
 		$this->assertEquals($item, $this->collection->pop());
 	}
 
 	public function testShrinksWhenPoppingItems()
 	{
-		$this->collection->push(1);
-		$this->collection->push(2);
-		$this->collection->push(3);
+		$this->push(1, 2, 3);
 		$this->collection->pop();
 		$this->assertEquals(2, $this->collection->size());
 	}
@@ -50,9 +46,7 @@ class StackTest extends AbstractCollectionTest
 		$first = 'foobar';
 		$second = 'Hello, world!';
 		$third = 666;
-		$this->collection->push($first);
-		$this->collection->push($second);
-		$this->collection->push($third);
+		$this->push($first, $second, $third);
 		$this->assertEquals($third, $this->collection->pop());
 		$this->assertEquals($second, $this->collection->pop());
 		$this->assertEquals($first, $this->collection->pop());
