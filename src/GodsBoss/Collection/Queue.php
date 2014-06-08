@@ -8,4 +8,8 @@ class Queue
 	{
 		return 0;
 	}
+
+	public function push($value)
+	{
+	}
 }

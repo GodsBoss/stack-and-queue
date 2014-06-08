@@ -28,4 +28,10 @@ abstract class AbstractCollectionTest extends PHPUnit_Framework_TestCase
 		$this->assertInternalType('integer', $this->collection->size());
 		$this->assertEquals(0, $this->collection->size());
 	}
+
+	public function testAcceptsItems()
+	{
+		$item = 5;
+		$this->push($item);
+	}
 }
