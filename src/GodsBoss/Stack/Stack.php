@@ -5,6 +5,7 @@ namespace GodsBoss\Stack;
 class Stack
 {
 	private $size = 0;
+	private $item;
 
 	public function size()
 	{
@@ -14,5 +15,11 @@ class Stack
 	public function add($value)
 	{
 		$this->size++;
+		$this->item = $value;
+	}
+
+	public function pop()
+	{
+		return $this->item;
 	}
 }

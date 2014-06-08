@@ -28,4 +28,12 @@ class StackTest extends PHPUnit_Framework_TestCase
 		$stack->add('baz');
 		$this->assertEquals(3, $stack->size());
 	}
+
+	public function testGivesLastAddedItemBack()
+	{
+		$item = 'Hello, world!';
+		$stack = new Stack();
+		$stack->add($item);
+		$this->assertEquals($item, $stack->pop());
+	}
 }
