@@ -53,4 +53,18 @@ class StackTest extends PHPUnit_Framework_TestCase
 		$this->setExpectedException('GodsBoss\Stack\PopFromEmptyStackException');
 		$stack->pop();
 	}
+
+	public function testPopsItemsInReverseOrder()
+	{
+		$first = 'foobar';
+		$second = 'Hello, world!';
+		$third = 666;
+		$stack = new Stack();
+		$stack->push($first);
+		$stack->push($second);
+		$stack->push($third);
+		$this->assertEquals($third, $stack->pop());
+		$this->assertEquals($second, $stack->pop());
+		$this->assertEquals($first, $stack->pop());
+	}
 }

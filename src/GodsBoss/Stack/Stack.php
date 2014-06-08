@@ -5,7 +5,7 @@ namespace GodsBoss\Stack;
 class Stack
 {
 	private $size = 0;
-	private $item;
+	private $items = array();
 
 	public function size()
 	{
@@ -14,8 +14,8 @@ class Stack
 
 	public function push($value)
 	{
+		$this->items[$this->size] = $value;
 		$this->size++;
-		$this->item = $value;
 	}
 
 	public function pop()
@@ -24,6 +24,8 @@ class Stack
 			throw new PopFromEmptyStackException();
 		}
 		$this->size--;
-		return $this->item;
+		$item = $this->items[$this->size];
+		unset($this->items[$this->size]);
+		return $item;
 	}
 }
