@@ -41,6 +41,15 @@ abstract class AbstractCollectionTest extends PHPUnit_Framework_TestCase
 		$this->collection->pop();
 	}
 
+	public function testSignalsErrorIfPoppedItemCountExceedsPushedItemCount()
+	{
+		$this->push('foo', 'baz');
+		$this->setExpectedException('GodsBoss\Collection\EmptyException');
+		$this->collection->pop();
+		$this->collection->pop();
+		$this->collection->pop();
+	}
+
 	public function testHasASizeAccordingToCountOfAddedItems()
 	{
 		$this->push('foo', 'bar', 'baz');
