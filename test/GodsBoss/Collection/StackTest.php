@@ -1,6 +1,6 @@
 <?php
 
-namespace GodsBoss\Stack;
+namespace GodsBoss\Collection;
 
 use PHPUnit_Framework_TestCase;
 
@@ -50,7 +50,7 @@ class StackTest extends PHPUnit_Framework_TestCase
 	public function testSignalsErrorOnPoppingIfEmpty()
 	{
 		$stack = new Stack();
-		$this->setExpectedException('GodsBoss\Stack\PopFromEmptyStackException');
+		$this->setExpectedException('GodsBoss\Collection\PopFromEmptyStackException');
 		$stack->pop();
 	}
 

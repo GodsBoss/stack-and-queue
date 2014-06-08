@@ -1,6 +1,6 @@
 <?php
 
-namespace GodsBoss\Stack;
+namespace GodsBoss\Collection;
 
 class Item implements Node
 {
