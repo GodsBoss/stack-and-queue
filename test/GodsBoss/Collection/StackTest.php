@@ -29,12 +29,6 @@ class StackTest extends AbstractCollectionTest
 		$this->assertEquals(2, $this->collection->size());
 	}
 
-	public function testSignalsErrorOnPoppingIfEmpty()
-	{
-		$this->setExpectedException('GodsBoss\Collection\EmptyException');
-		$this->collection->pop();
-	}
-
 	public function testPopsItemsInReverseOrder()
 	{
 		$first = 'foobar';

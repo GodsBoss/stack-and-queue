@@ -34,4 +34,10 @@ abstract class AbstractCollectionTest extends PHPUnit_Framework_TestCase
 		$item = 5;
 		$this->push($item);
 	}
+
+	public function testSignalsErrorOnPoppingIfEmpty()
+	{
+		$this->setExpectedException('GodsBoss\Collection\EmptyException');
+		$this->collection->pop();
+	}
 }

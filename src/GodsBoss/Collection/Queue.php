@@ -12,4 +12,9 @@ class Queue
 	public function push($value)
 	{
 	}
+
+	public function pop()
+	{
+		throw new EmptyException();
+	}
 }
