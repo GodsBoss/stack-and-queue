@@ -19,4 +19,9 @@ class End implements Node
 	public function setNextNode(Node $node)
 	{
 	}
+
+	public function getFirstOnPush(Node $candidate)
+	{
+		return $candidate;
+	}
 }

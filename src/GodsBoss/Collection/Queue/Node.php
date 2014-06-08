@@ -24,4 +24,6 @@ interface Node
 	* @param \GodsBoss\Collection\Queue\Node
 	*/
 	public function setNextNode(Node $node);
+
+	public function getFirstOnPush(Node $candidate);
 }

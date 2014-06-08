@@ -27,4 +27,9 @@ class Item implements Node
 	{
 		$this->nextNode = $node;
 	}
+
+	public function getFirstOnPush(Node $candidate)
+	{
+		return $this;
+	}
 }

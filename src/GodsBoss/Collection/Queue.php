@@ -27,9 +27,7 @@ class Queue
 	public function push($value)
 	{
 		$item = new Item($this->end, $value);
-		if ($this->first == $this->end) {
-			$this->first = $item;
-		}
+		$this->first = $this->first->getFirstOnPush($item);
 		$this->secondToLast->setNextNode($item);
 		$this->secondToLast = $item;
 		$this->size++;
