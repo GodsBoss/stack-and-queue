@@ -50,6 +50,15 @@ abstract class AbstractCollectionTest extends PHPUnit_Framework_TestCase
 		$this->collection->pop();
 	}
 
+	public function testHasStillASizeOfZeroAfterSignalingPoppingIfEmptyError()
+	{
+		try {
+			$this->collection->pop();
+		} catch (EmptyException $exception) {
+		}
+		$this->assertEquals(0, $this->collection->size());
+	}
+
 	public function testHasASizeAccordingToCountOfAddedItems()
 	{
 		$this->push('foo', 'bar', 'baz');
