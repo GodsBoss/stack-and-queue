@@ -1,0 +1,15 @@
+{
+	"name": "godsboss/stack",
+	"description": "A simple Stack implementation.",
+	"license": "GPL-3.0",
+
+	"require-dev": {
+		"phpunit/phpunit": "~4.1"
+	},
+
+	"autoload": {
+		"psr-0": {
+			"GodsBoss\\": ["src/", "test/"]
+		}
+	}
+}
