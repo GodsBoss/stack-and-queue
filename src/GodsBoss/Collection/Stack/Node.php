@@ -8,7 +8,7 @@ interface Node
 	* Returns the value for this node.
 	*
 	* @return mixed
-	* @throws \GodsBoss\Stack\PopFromEmptyStackException
+	* @throws \GodsBoss\Collection\EmptyException
 	*/
 	public function getValue();
 
@@ -16,7 +16,7 @@ interface Node
 	* Returns the previous node.
 	*
 	* @return Node
-	* @throws \GodsBoss\Stack\PopFromEmptyStackException
+	* @throws \GodsBoss\Collection\EmptyException
 	*/
 	public function getPreviousNode();
 }
