@@ -1,6 +1,6 @@
 {
-	"name": "godsboss/stack",
-	"description": "A simple Stack implementation.",
+	"name": "godsboss/collection",
+	"description": "Some simple collection implementations.",
 	"license": "GPL-3.0",
 
 	"require-dev": {
