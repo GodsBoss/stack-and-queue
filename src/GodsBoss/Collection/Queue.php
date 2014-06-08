@@ -24,6 +24,11 @@ class Queue
 		return $this->size;
 	}
 
+	public function isEmpty()
+	{
+		return true;
+	}
+
 	public function push($value)
 	{
 		$item = new Item($this->end, $value);

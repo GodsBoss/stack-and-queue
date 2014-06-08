@@ -20,6 +20,11 @@ class Stack
 		return $this->size;
 	}
 
+	public function isEmpty()
+	{
+		return true;
+	}
+
 	public function push($value)
 	{
 		$this->item = new Item($this->item, $value);

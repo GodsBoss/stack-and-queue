@@ -78,4 +78,9 @@ abstract class AbstractCollectionTest extends PHPUnit_Framework_TestCase
 		$this->push($item);
 		$this->assertEquals($item, $this->collection->pop());
 	}
+
+	public function testExposesIfItIsEmpty()
+	{
+		$this->assertTrue($this->collection->isEmpty());
+	}
 }
