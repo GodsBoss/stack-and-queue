@@ -2,56 +2,47 @@
 
 namespace GodsBoss\Collection;
 
-use PHPUnit_Framework_TestCase;
-
-class StackTest extends PHPUnit_Framework_TestCase
+class StackTest extends AbstractCollectionTest
 {
-	public function testHasAnInitialSizeOfZero()
+	protected function createEmptyCollection()
 	{
-		$stack = new Stack();
-		$this->assertInternalType('integer', $stack->size());
-		$this->assertEquals(0, $stack->size());
+		return new Stack();
 	}
 
 	public function testAcceptsItems()
 	{
 		$item = 5;
-		$stack = new Stack();
-		$stack->push($item);
+		$this->collection->push($item);
 	}
 
 	public function testHasASizeAccordingToCountOfAddedItems()
 	{
-		$stack = new Stack();
-		$stack->push('foo');
-		$stack->push('bar');
-		$stack->push('baz');
-		$this->assertEquals(3, $stack->size());
+		$this->collection->push('foo');
+		$this->collection->push('bar');
+		$this->collection->push('baz');
+		$this->assertEquals(3, $this->collection->size());
 	}
 
 	public function testGivesLastAddedItemBack()
 	{
 		$item = 'Hello, world!';
-		$stack = new Stack();
-		$stack->push($item);
-		$this->assertEquals($item, $stack->pop());
+		$this->collection->push($item);
+		$this->assertEquals($item, $this->collection->pop());
 	}
 
 	public function testShrinksWhenPoppingItems()
 	{
-		$stack = new Stack();
-		$stack->push(1);
-		$stack->push(2);
-		$stack->push(3);
-		$stack->pop();
-		$this->assertEquals(2, $stack->size());
+		$this->collection->push(1);
+		$this->collection->push(2);
+		$this->collection->push(3);
+		$this->collection->pop();
+		$this->assertEquals(2, $this->collection->size());
 	}
 
 	public function testSignalsErrorOnPoppingIfEmpty()
 	{
-		$stack = new Stack();
 		$this->setExpectedException('GodsBoss\Collection\PopFromEmptyStackException');
-		$stack->pop();
+		$this->collection->pop();
 	}
 
 	public function testPopsItemsInReverseOrder()
@@ -59,12 +50,11 @@ class StackTest extends PHPUnit_Framework_TestCase
 		$first = 'foobar';
 		$second = 'Hello, world!';
 		$third = 666;
-		$stack = new Stack();
-		$stack->push($first);
-		$stack->push($second);
-		$stack->push($third);
-		$this->assertEquals($third, $stack->pop());
-		$this->assertEquals($second, $stack->pop());
-		$this->assertEquals($first, $stack->pop());
+		$this->collection->push($first);
+		$this->collection->push($second);
+		$this->collection->push($third);
+		$this->assertEquals($third, $this->collection->pop());
+		$this->assertEquals($second, $this->collection->pop());
+		$this->assertEquals($first, $this->collection->pop());
 	}
 }

@@ -2,14 +2,10 @@
 
 namespace GodsBoss\Collection;
 
-use PHPUnit_Framework_TestCase;
-
-class QueueTest extends PHPUnit_Framework_TestCase
+class QueueTest extends AbstractCollectionTest
 {
-	public function testHasAnInitialSizeOfZero()
+	protected function createEmptyCollection()
 	{
-		$queue = new Queue();
-		$this->assertInternalType('integer', $queue->size());
-		$this->assertEquals(0, $queue->size());
+		return new Queue();
 	}
 }
