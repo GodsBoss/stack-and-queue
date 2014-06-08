@@ -19,4 +19,13 @@ class StackTest extends PHPUnit_Framework_TestCase
 		$stack = new Stack();
 		$stack->add($item);
 	}
+
+	public function testHasASizeAccordingToCountOfAddedItems()
+	{
+		$stack = new Stack();
+		$stack->add('foo');
+		$stack->add('bar');
+		$stack->add('baz');
+		$this->assertEquals(3, $stack->size());
+	}
 }
