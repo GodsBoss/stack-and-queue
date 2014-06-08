@@ -12,4 +12,11 @@ class StackTest extends PHPUnit_Framework_TestCase
 		$this->assertInternalType('integer', $stack->size());
 		$this->assertEquals(0, $stack->size());
 	}
+
+	public function testAcceptsItems()
+	{
+		$item = 5;
+		$stack = new Stack();
+		$stack->add($item);
+	}
 }

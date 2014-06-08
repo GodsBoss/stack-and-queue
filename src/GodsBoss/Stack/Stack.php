@@ -8,4 +8,8 @@ class Stack
 	{
 		return 0;
 	}
+
+	public function add($value)
+	{
+	}
 }
