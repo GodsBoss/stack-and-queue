@@ -5,7 +5,12 @@ namespace GodsBoss\Stack;
 class Stack
 {
 	private $size = 0;
-	private $items = array();
+	private $item;
+
+	public function __construct()
+	{
+		$this->item = new Bottom();
+	}
 
 	public function size()
 	{
@@ -14,18 +19,15 @@ class Stack
 
 	public function push($value)
 	{
-		$this->items[$this->size] = $value;
+		$this->item = new Item($this->item, $value);
 		$this->size++;
 	}
 
 	public function pop()
 	{
-		if ($this->size === 0) {
-			throw new PopFromEmptyStackException();
-		}
+		$value = $this->item->getValue();
+		$this->item = $this->item->getPreviousNode();
 		$this->size--;
-		$item = $this->items[$this->size];
-		unset($this->items[$this->size]);
-		return $item;
+		return $value;
 	}
 }
