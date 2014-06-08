@@ -2,11 +2,22 @@
 
 namespace GodsBoss\Collection;
 
+use GodsBoss\Collection\Queue\End;
+use GodsBoss\Collection\Queue\Item;
+
 class Queue
 {
 	private $size = 0;
-	private $index = 0;
-	private $items = array();
+	private $first;
+	private $end;
+	private $secondToLast;
+
+	public function __construct()
+	{
+		$this->first = new End();
+		$this->end = $this->first;
+		$this->secondToLast = $this->first;
+	}
 
 	public function size()
 	{
@@ -15,20 +26,23 @@ class Queue
 
 	public function push($value)
 	{
-		$this->items[$this->size] = $value;
+		$item = new Item($this->end, $value);
+		if ($this->first == $this->end) {
+			$this->first = $item;
+		}
+		$this->secondToLast->setNextNode($item);
+		$this->secondToLast = $item;
 		$this->size++;
 	}
 
 	public function pop()
 	{
-		if ($this->size === 0) {
-			throw new EmptyException();
-		} else {
-			$item = $this->items[$this->index];
-			unset($this->items[$this->index]);
-			$this->index++;
-			$this->size--;
-			return $item;
+		$value = $this->first->getValue();
+		$this->first = $this->first->getNextNode();
+		if ($this->first == $this->end) {
+			$this->secondToLast = $this->end;
 		}
+		$this->size--;
+		return $value;
 	}
 }
