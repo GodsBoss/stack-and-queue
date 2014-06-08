@@ -9,7 +9,7 @@ class QueueTest extends AbstractCollectionTest
 		return new Queue();
 	}
 
-	public function testPopsItemInOrder()
+	public function testPopsItemsInOrder()
 	{
 		$first = 'First!!!11';
 		$second = 12345;
