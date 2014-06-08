@@ -4,6 +4,6 @@ namespace GodsBoss\Collection;
 
 use Exception;
 
-class PopFromEmptyStackException extends Exception
+class EmptyException extends Exception
 {
 }

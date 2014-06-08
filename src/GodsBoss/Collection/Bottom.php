@@ -6,11 +6,11 @@ class Bottom implements Node
 {
 	public function getValue()
 	{
-		throw new PopFromEmptyStackException();
+		throw new EmptyException();
 	}
 
 	public function getPreviousNode()
 	{
-		throw new PopFromEmptyStackException();
+		throw new EmptyException();
 	}
 }
