@@ -9,12 +9,6 @@ class StackTest extends AbstractCollectionTest
 		return new Stack();
 	}
 
-	public function testHasASizeAccordingToCountOfAddedItems()
-	{
-		$this->push('foo', 'bar', 'baz');
-		$this->assertEquals(3, $this->collection->size());
-	}
-
 	public function testGivesLastAddedItemBack()
 	{
 		$item = 'Hello, world!';

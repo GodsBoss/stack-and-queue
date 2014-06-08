@@ -40,4 +40,10 @@ abstract class AbstractCollectionTest extends PHPUnit_Framework_TestCase
 		$this->setExpectedException('GodsBoss\Collection\EmptyException');
 		$this->collection->pop();
 	}
+
+	public function testHasASizeAccordingToCountOfAddedItems()
+	{
+		$this->push('foo', 'bar', 'baz');
+		$this->assertEquals(3, $this->collection->size());
+	}
 }

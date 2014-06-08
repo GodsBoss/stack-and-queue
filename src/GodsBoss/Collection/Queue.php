@@ -4,13 +4,16 @@ namespace GodsBoss\Collection;
 
 class Queue
 {
+	private $size = 0;
+
 	public function size()
 	{
-		return 0;
+		return $this->size;
 	}
 
 	public function push($value)
 	{
+		$this->size++;
 	}
 
 	public function pop()
