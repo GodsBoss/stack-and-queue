@@ -46,4 +46,11 @@ class StackTest extends PHPUnit_Framework_TestCase
 		$stack->pop();
 		$this->assertEquals(2, $stack->size());
 	}
+
+	public function testSignalsErrorOnPoppingIfEmpty()
+	{
+		$stack = new Stack();
+		$this->setExpectedException('GodsBoss\Stack\PopFromEmptyStackException');
+		$stack->pop();
+	}
 }

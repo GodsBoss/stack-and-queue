@@ -20,6 +20,9 @@ class Stack
 
 	public function pop()
 	{
+		if ($this->size === 0) {
+			throw new PopFromEmptyStackException();
+		}
 		$this->size--;
 		return $this->item;
 	}
