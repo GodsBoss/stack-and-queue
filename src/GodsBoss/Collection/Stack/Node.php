@@ -1,6 +1,6 @@
 <?php
 
-namespace GodsBoss\Collection;
+namespace GodsBoss\Collection\Stack;
 
 interface Node
 {

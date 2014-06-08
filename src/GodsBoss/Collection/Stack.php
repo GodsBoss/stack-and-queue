@@ -2,6 +2,9 @@
 
 namespace GodsBoss\Collection;
 
+use GodsBoss\Collection\Stack\Bottom;
+use GodsBoss\Collection\Stack\Item;
+
 class Stack
 {
 	private $size = 0;

@@ -1,6 +1,8 @@
 <?php
 
-namespace GodsBoss\Collection;
+namespace GodsBoss\Collection\Stack;
+
+use GodsBoss\Collection\EmptyException;
 
 class Bottom implements Node
 {
