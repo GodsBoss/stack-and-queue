@@ -53,4 +53,11 @@ abstract class AbstractCollectionTest extends PHPUnit_Framework_TestCase
 		$this->collection->pop();
 		$this->assertEquals(2, $this->collection->size());
 	}
+
+	public function testPopsSingleItem()
+	{
+		$item = 'Hello, world!';
+		$this->push($item);
+		$this->assertEquals($item, $this->collection->pop());
+	}
 }

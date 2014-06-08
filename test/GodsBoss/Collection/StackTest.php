@@ -9,13 +9,6 @@ class StackTest extends AbstractCollectionTest
 		return new Stack();
 	}
 
-	public function testGivesLastAddedItemBack()
-	{
-		$item = 'Hello, world!';
-		$this->push($item);
-		$this->assertEquals($item, $this->collection->pop());
-	}
-
 	public function testPopsItemsInReverseOrder()
 	{
 		$first = 'foobar';

@@ -5,6 +5,7 @@ namespace GodsBoss\Collection;
 class Queue
 {
 	private $size = 0;
+	private $item;
 
 	public function size()
 	{
@@ -14,6 +15,7 @@ class Queue
 	public function push($value)
 	{
 		$this->size++;
+		$this->item = $value;
 	}
 
 	public function pop()
@@ -22,6 +24,7 @@ class Queue
 			throw new EmptyException();
 		} else {
 			$this->size--;
+			return $this->item;
 		}
 	}
 }
