@@ -15,7 +15,7 @@ interface Node
 	/**
 	* Returns the previous node.
 	*
-	* @return Node
+	* @return \GodsBoss\Collection\Stack\Node
 	* @throws \GodsBoss\Collection\EmptyException
 	*/
 	public function getPreviousNode();

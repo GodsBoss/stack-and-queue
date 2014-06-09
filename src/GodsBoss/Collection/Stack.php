@@ -7,7 +7,14 @@ use GodsBoss\Collection\Stack\Item;
 
 class Stack
 {
+	/**
+	* @var integer
+	*/
 	private $size = 0;
+
+	/**
+	* @var \GodsBoss\Collection\Stack\Node
+	*/
 	private $item;
 
 	public function __construct()

@@ -4,9 +4,20 @@ namespace GodsBoss\Collection\Queue;
 
 class Item implements Node
 {
+	/**
+	* @var mixed
+	*/
 	private $value;
+
+	/**
+	* @var \GodsBoss\Collection\Queue\Node
+	*/
 	private $nextNode;
 
+	/**
+	* @param \GodsBoss\Collection\Queue\Node $nextNode
+	* @param mixed
+	*/
 	public function __construct(Node $nextNode, $value)
 	{
 		$this->nextNode = $nextNode;

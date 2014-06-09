@@ -7,9 +7,24 @@ use GodsBoss\Collection\Queue\Item;
 
 class Queue
 {
+	/**
+	* @var integer
+	*/
 	private $size = 0;
+
+	/**
+	* @var GodsBoss\Collection\Queue\Node
+	*/
 	private $first;
+
+	/**
+	* @var GodsBoss\Collection\Queue\Node
+	*/
 	private $end;
+
+	/**
+	* @var GodsBoss\Collection\Queue\Node
+	*/
 	private $secondToLast;
 
 	public function __construct()
